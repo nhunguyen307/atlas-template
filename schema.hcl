@@ -4,7 +4,7 @@ schema "app" {
 
 table "users" {
   schema = schema.app
-  column "id" {
+  column "id1" {
     type = int
   }
   column "user_name" {
