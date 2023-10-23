@@ -4,7 +4,7 @@ schema "app" {
 
 table "users" {
   schema = schema.app
-  column "id1" {
+  column "id" {
     type = int
   }
   column "user_name" {
@@ -14,7 +14,7 @@ table "users" {
     type   = varchar(255)
   }
   primary_key {
-    columns = [column.id1]
+    columns = [column.id]
   }
 }
 
