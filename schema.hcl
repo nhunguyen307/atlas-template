@@ -14,7 +14,7 @@ table "users" {
     type   = varchar(255)
   }
   primary_key {
-    columns = [column.id]
+    columns = [column.id1]
   }
 }
 
