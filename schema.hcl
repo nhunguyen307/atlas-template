@@ -59,7 +59,7 @@ table "atlas_schema_revisions" {
 }
 table "posts" {
   schema = schema.example
-  column "id" {
+  column "id1" {
     null = false
     type = int
   }
@@ -76,7 +76,7 @@ table "posts" {
     type = text
   }
   primary_key {
-    columns = [column.id]
+    columns = [column.id1]
   }
 }
 table "users" {
