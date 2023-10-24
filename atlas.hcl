@@ -1,12 +1,7 @@
+# The "dev" environment represents our local testings.
 env "local" {
-  src = "./schema.hcl"
-  dev = "docker://mysql/8/dev"
+  url = "mysql://root:pass@:3306/example"
   migration {
-    dir = "file://migrations"
-  }
-  format {
-    migrate {
-      diff = "{{ sql . \"  \" }}"
-    }
+    dir = "atlas://app"
   }
 }
