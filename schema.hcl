@@ -1,6 +1,10 @@
 table "atlas_schema_revisions" {
   schema  = schema.example
   collate = "utf8mb4_bin"
+  column "version" {
+    null = false
+    type = varchar(255)
+  }
   column "description" {
     null = false
     type = varchar(255)
@@ -49,46 +53,48 @@ table "atlas_schema_revisions" {
     null = false
     type = varchar(255)
   }
+  primary_key {
+    columns = [column.version]
+  }
 }
-table "repos" {
+table "posts" {
   schema = schema.example
   column "id" {
     null = false
-    type = bigint
+    type = int
   }
-  column "name" {
+  column "user_id" {
+    null = false
+    type = int
+  }
+  column "title" {
     null = false
     type = varchar(255)
   }
-  column "owner_id" {
+  column "body" {
     null = false
-    type = bigint
+    type = text
   }
   primary_key {
     columns = [column.id]
-  }
-  foreign_key "owner_id" {
-    columns     = [column.owner_id]
-    ref_columns = [table.users.column.id]
-    on_update   = NO_ACTION
-    on_delete   = NO_ACTION
-  }
-  index "owner_id" {
-    columns = [column.owner_id]
   }
 }
 table "users" {
   schema = schema.example
-  column "id" {
+  column "id1" {
     null = false
-    type = bigint
+    type = int
   }
-  column "name" {
+  column "user_name" {
     null = false
-    type = varchar(250)
+    type = varchar(255)
+  }
+  column "email" {
+    null = false
+    type = varchar(255)
   }
   primary_key {
-    columns = [column.id]
+    columns = [column.id1]
   }
 }
 schema "example" {
